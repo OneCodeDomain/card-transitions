@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* font-family: "Noto Sans", sans-serif; */
+/* font-family: "Megrim", system-ui; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Noto Sans", sans-serif;
+    -webkit-tap-highlight-color:transparent;
+}
+*::-webkit-scrollbar{display: none;}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    background: url('./images/blur-image.png') no-repeat center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 5%;
+}
+.card-container{
+    width: 100%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
+    gap: 8rem;
+    place-items: center;
+}
+.card-box{
+    width: 100%;
+    max-width: 270px;
+    min-height: 340px;
+    position: relative;
+    z-index: 2;
+}
+.card-box:hover{
+    z-index: 4;
+}
+.card-box:hover .card{
+    background-color: #fff5;
+    backdrop-filter: blur(5px);
+    transform: rotate(7deg) translateY(4.5rem);
+}
+.card-box:hover .img-box{
+    opacity: 1;
+    transform: rotate(-2deg) translateY(-7.5rem) translateX(-2rem);
+}
+.card{
+    position: absolute;
+    top: 0;left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    transition: all 400ms ease;
+    cursor: pointer;
+    padding: 8%;
+    background-color: #0006;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+}
+.img-box{
+    position: absolute;
+    z-index: -1;
+    top: 0;left: 0;
+    height: 100%;
+    width: 100%;border-radius: 25px;
+    transition: all 400ms ease;
+    background-color: #4882ab;
+    opacity: 0;
+}
+.title-box{
+    font-family: "Megrim",system-ui;
+    font-weight: 800;
+    font-size: 25px;
+    transition: all 400ms ease;
+    position: relative;
+}
+.title-box::before{
+    content: "";
+    position: absolute; bottom: -10px;
+    left: 0;
+    width: 100%; height: 2px;
+    background-color: #fff6;
+    transition: all 400ms ease;
+}
+.descrip-box{
+    font-size: 12.5px;
+    line-height: 22px;
+    word-break: break-all;
+    transition: all 400ms ease;
+}
+
+.card-box:hover .title-box{color: #0009;}
+.card-box:hover .descrip-box{color: #fff9;}
+.card-box:hover .title-box::before{background-color: #0009;}
