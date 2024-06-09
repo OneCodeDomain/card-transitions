@@ -15,7 +15,7 @@
 .container{
     min-height: 100vh;
     width: 100%;
-    background: url('./images/blur-image.png') no-repeat center / cover;
+    background: url('./images/blurred-image.png') no-repeat center / cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,6 +46,7 @@
 }
 .card-box:hover .img-box{
     opacity: 1;
+    transition-delay: 200ms;
     transform: rotate(-2deg) translateY(-7.5rem) translateX(-2rem);
 }
 .card{
